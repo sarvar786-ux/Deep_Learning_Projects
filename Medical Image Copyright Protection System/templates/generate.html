@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Generate Zero-Watermark</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:#f4f7fb;
+}
+
+/* NAVBAR */
+nav{
+    background:#2f80ed;
+    padding:14px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+nav .logo{
+    font-size:20px;
+    font-weight:600;
+    color:white;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:500;
+}
+nav a:hover{ text-decoration:underline; }
+
+/* CARD */
+.container{
+    display:flex;
+    justify-content:center;
+    margin-top:80px;
+}
+form{
+    background:white;
+    width:420px;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    text-align:center;
+}
+h2{margin-bottom:20px;color:#2f80ed;}
+input[type=file]{
+    padding:10px;
+}
+button{
+    margin-top:20px;
+    padding:12px 26px;
+    background:#2f80ed;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+    cursor:pointer;
+}
+button:hover{background:#1c63c7;}
+
+.back{
+    display:inline-block;
+    margin-top:20px;
+    color:#2f80ed;
+    text-decoration:none;
+    font-weight:500;
+}
+.back:hover{text-decoration:underline;}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Zero-Watermarking System</div>
+    <div>
+        <a href="/index">Dashboard</a>
+        <a href="/generate_page">Generate</a>
+        <a href="/verify_page">Verify</a>
+        <a href="/charts">Charts</a>
+        <a href="/logout">Logout</a>
+    </div>
+</nav>
+
+<!-- CONTENT -->
+<div class="container">
+<form action="/generate" method="POST" enctype="multipart/form-data">
+    <h2>Generate Zero-Watermark</h2>
+    <input type="file" name="file" required><br>
+    <button type="submit">Generate Watermark</button><br>
+    <a href="/index" class="back">← Back to Dashboard</a>
+</form>
+</div>
+
+</body>
+</html>
