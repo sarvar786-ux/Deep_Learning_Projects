@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Zero-Watermarking | Home</title>
+
+<style>
+body{
+    margin:0;
+    font-family:"Segoe UI", Roboto, Arial, sans-serif;
+    background:#f5f7fb;
+    color:#2b2b2b;
+}
+
+/* NAVBAR */
+nav{
+    background:#0f172a;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 60px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:600;
+    letter-spacing:0.4px;
+}
+
+nav a{
+    color:#e5e7eb;
+    text-decoration:none;
+    margin-left:30px;
+    font-size:15px;
+}
+
+nav a:hover{
+    color:#ffffff;
+}
+
+/* HERO */
+.hero{
+    background:white;
+    padding:80px 40px 60px;
+    text-align:center;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.hero h1{
+    font-size:34px;
+    margin-bottom:15px;
+    color:#0f172a;
+}
+
+.hero p{
+    max-width:900px;
+    margin:auto;
+    font-size:17px;
+    line-height:1.7;
+    color:#4b5563;
+}
+
+/* CONTENT */
+.container{
+    max-width:1100px;
+    margin:60px auto;
+    padding:0 40px;
+}
+
+.section{
+    background:white;
+    padding:45px;
+    border-radius:8px;
+    box-shadow:0 4px 18px rgba(0,0,0,0.06);
+}
+
+.section h2{
+    font-size:24px;
+    margin-bottom:20px;
+    color:#0f172a;
+    border-bottom:2px solid #e5e7eb;
+    padding-bottom:10px;
+}
+
+.section p{
+    line-height:1.8;
+    font-size:16px;
+    color:#374151;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-top:35px;
+}
+
+.card{
+    background:#f9fafb;
+    padding:25px;
+    border-radius:6px;
+    border:1px solid #e5e7eb;
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:10px;
+    color:#111827;
+}
+
+.card p{
+    font-size:15px;
+    color:#4b5563;
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    color:#cbd5f5;
+    text-align:center;
+    padding:18px;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Zero-Watermarking System</div>
+    <div>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Robust Zero-Watermarking of Medical Images</h1>
+    <p>
+        A professional and non-intrusive copyright protection framework for
+        medical images using frequency-domain feature extraction and
+        chaos-based encryption techniques.
+    </p>
+</section>
+
+<div class="container">
+    <div class="section">
+        <h2>Abstract</h2>
+        <p>
+            As modern healthcare systems increasingly depend on digital image
+            transmission and storage, ensuring image ownership protection and
+            integrity has become a significant challenge. Conventional
+            watermarking approaches modify image content, which is unsuitable
+            for sensitive medical data.
+        </p>
+
+        <p>
+            This project presents a robust zero-watermarking framework that
+            extracts discriminative features from medical images without
+            altering the original content. The extracted features are
+            encrypted using chaotic maps to generate secure watermark
+            signatures.
+        </p>
+
+        <p>
+            Experimental evaluations demonstrate strong robustness against
+            common image processing attacks such as noise addition,
+            compression, rotation, and scaling, making the proposed system
+            suitable for real-world healthcare environments.
+        </p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Security</h3>
+                <p>
+                    Chaotic encryption enhances resistance against
+                    unauthorized watermark reconstruction.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Robustness</h3>
+                <p>
+                    Frequency-domain features ensure stability under
+                    various image processing attacks.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Medical Integrity</h3>
+                <p>
+                    Original medical images remain completely unchanged,
+                    preserving diagnostic quality.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2025 Zero-Watermarking for Medical Image Protection
+</footer>
+
+</body>
+</html>
