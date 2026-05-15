@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dataset Statistics | Zero-Watermarking</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body{
+    margin:0;
+    font-family:"Segoe UI", Roboto, Arial, sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+}
+
+/* NAVBAR */
+nav{
+    background:#0f172a;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 60px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:600;
+}
+
+nav a{
+    color:#e5e7eb;
+    text-decoration:none;
+    margin-left:26px;
+    font-size:15px;
+}
+
+nav a:hover{
+    color:#ffffff;
+}
+
+/* TITLE */
+.title{
+    text-align:center;
+    margin:40px 0 25px;
+}
+
+.title h1{
+    margin:0;
+    color:#0f172a;
+}
+
+.title p{
+    color:#6b7280;
+    margin-top:8px;
+}
+
+/* CONTAINER */
+.container{
+    max-width:900px;
+    margin:0 auto 60px;
+    padding:0 30px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 10px 26px rgba(0,0,0,0.08);
+    margin-bottom:35px;
+}
+
+.card h2{
+    margin-top:0;
+    text-align:center;
+    color:#0f172a;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Zero-Watermarking System</div>
+    <div>
+        <a href="/">Home</a>
+        <a href="/index">Dashboard</a>
+        <a href="/">Logout</a>
+    </div>
+</nav>
+
+<!-- TITLE -->
+<div class="title">
+    <h1>Medical Image Dataset Distribution</h1>
+    <p>Dataset statistics used for zero-watermarking experiments</p>
+</div>
+
+<!-- CHARTS -->
+<div class="container">
+
+    <!-- BAR CHART -->
+    <div class="card">
+        <h2>Bar Chart – Image Count</h2>
+        <canvas id="barChart"></canvas>
+    </div>
+
+    <!-- PIE CHART 3D-LOOK -->
+    <div class="card">
+        <h2>Pie Chart – Dataset Share (3D Look)</h2>
+        <canvas id="pieChart" style="max-width:500px; margin:0 auto; display:block;"></canvas>
+    </div>
+
+</div>
+
+<script>
+const labels = [
+    "Abdomen CT",
+    "Breast MRI",
+    "Chest CT",
+    "CXR",
+    "Hand",
+    "Head CT"
+];
+
+const dataValues = [
+    10000,
+    8954,
+    10000,
+    20000,
+    10000,
+    10000
+];
+
+// BAR CHART
+new Chart(document.getElementById("barChart"), {
+    type: "bar",
+    data: {
+        labels: labels,
+        datasets: [{
+            label: "Number of Images",
+            data: dataValues,
+            backgroundColor: "#0f172a"
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: false }
+        },
+        scales: {
+            y: { beginAtZero: true }
+        }
+    }
+});
+
+// PIE CHART 3D-LOOK
+new Chart(document.getElementById("pieChart").getContext("2d"), {
+    type: "pie",
+    data: {
+        labels: labels,
+        datasets: [{
+            data: dataValues,
+            backgroundColor: [
+                "#0f172a",
+                "#2563c9",
+                "#4f46e5",
+                "#ec4899",
+                "#facc15",
+                "#10b981"
+            ],
+            borderColor: "#ffffff",
+            borderWidth: 2,
+            hoverOffset: 20  // 3D-like pop-out effect
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { position: "bottom" } }
+    }
+});
+</script>
+
+</body>
+</html>
